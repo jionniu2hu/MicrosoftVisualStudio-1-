@@ -1,0 +1,23 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>新增</title>
+</head>
+<body>
+    <div> 
+        <form action="~/Views/Employee/Index.cshtml method="post">
+            姓名：<input type="text" id="TxtName" name="Name" value="" />
+            工资：<input type="text" id="TxtSalary" name="Salary" value="" />
+            <input type="submit" name="BtnSave" value="保存" />
+            <input type="button" name="BtnReset" value="重置" />
+        </form>
+    </div>
+</body>
+</html>
