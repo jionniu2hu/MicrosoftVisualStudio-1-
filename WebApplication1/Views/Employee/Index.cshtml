@@ -1,6 +1,6 @@
 ﻿@model WebApplication1.ViewModels.EmployeeListViewModel
 @{
-    Layout = null;
+    Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
 <!DOCTYPE html>
@@ -17,7 +17,7 @@
     </p>
     <form action="/employee/QueryName" method="post">
         姓名：<input type="text" name="searchName" />
-        <input type="submit" name="查询"/>
+        <input type="submit" name="查询" />
         <input type="reset" name="BtnReset" value="重置" />
     </form>
     <hr />
@@ -28,8 +28,11 @@
                 <li>
                     @key.EmployeeName,@key.EmployeeSalary,@key.EmployeeGrade
 
-                    <a href="/Employee/Delete/@key.EmployeeId">删除</a>
-                    <a href="/Employee/Update/@key.EmployeeId">更新</a>
+                    @*<a href="/Employee/Delete/@key.EmployeeId">删除</a>*@
+                    @*<a href="/Employee/Update/@key.EmployeeId">更新</a>*@
+
+                    @Html.ActionLink("删除", "Delete", new { id = key.EmployeeId })
+                    @Html.ActionLink("更新", "Update", new { id = key.EmployeeId })
                 </li>
             }
         </ul>
